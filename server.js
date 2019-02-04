@@ -15,19 +15,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys.js');
+const db = require('./config/keys');
 
-// Connect to MongoDB
-// mongoose
-//   .connect(db.mongoURI)
-//   .then(() => console.log('MongoDB Connected'))
-//   .catch(err => console.log(err));
+//  Connect to MongoDB
+ mongoose
+   .connect(db.mongoURI)
+   .then(() => console.log('MongoDB Connected'))
+   .catch(err => console.log(err));
 
 // Passport middleware
-// app.use(passport.initialize());
+ app.use(passport.initialize());
 
 // // Passport Config
-// require('./config/passport')(passport);
+ require('./config/passport')(passport);
 
 // // Use Routes
 // app.use('/api/users', users);
