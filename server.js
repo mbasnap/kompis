@@ -39,7 +39,7 @@ const db = require('./config/keys');
   // app.use(express.static('client/dist'));
 
    app.use('/', (req, res) => {
-     res.json({key: process.env.NODE_ENV})
+     res.json({key: db.mongoURI})
     //  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
    });
 // }
