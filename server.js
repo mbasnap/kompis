@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-// const db = require('./config/keys').mongoURI;
+const db = require('./config/keys');
 
-// // Connect to MongoDB
+// Connect to MongoDB
 // mongoose
-//   .connect(db)
+//   .connect(db.mongoURI)
 //   .then(() => console.log('MongoDB Connected'))
 //   .catch(err => console.log(err));
 
@@ -39,7 +39,8 @@ app.use(bodyParser.json());
   app.use(express.static('client/dist'));
 
    app.get('*', (req, res) => {
-     res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+     res.json(db)
+    //  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
    });
 // }
 
