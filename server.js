@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys_dev');
+const db = require('./config/keys.js');
 
 // Connect to MongoDB
 // mongoose
