@@ -29,7 +29,7 @@ edit = {path: '*/edit', component: EditPost },
   // children: [edit]
 },
 myRouter = new Router({
-  //  mode: 'history',
+   mode: 'history',
   routes: [
     home,
     {
