@@ -1,1 +1,2 @@
-module.exports = require('./keys_prod');
+const db = require('./keys_dev');
+module.exports = db
