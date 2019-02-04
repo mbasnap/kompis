@@ -36,9 +36,9 @@ const db = require('./config/keys');
 // Server static assets if in production
 // if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  app.use(express.static('client/dist'));
+  // app.use(express.static('client/dist'));
 
-   app.get('*', (req, res) => {
+   app.use('/', (req, res) => {
      res.json(db)
     //  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
    });
