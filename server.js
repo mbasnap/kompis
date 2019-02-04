@@ -38,11 +38,16 @@ app.use('/api/posts', posts);
 // if (process.env.NODE_ENV === 'production') {
   // Set static folder
   // app.use(express.static('client/dist/static'));
-  app.use(serveStatic(__dirname + "/client/dist"));
-
-  //  app.get('*', (req, res) => {
-  //    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-  //  });
+  // app.use(serveStatic(__dirname + "/client/dist"));
+    app.use('/', (req, res) => {
+      return res.json({msg: 'use'});
+    })
+    app.get('*', (req, res) => {
+      return res.json({msg: 'det'});
+    });
+    // app.get('*', (req, res) => {
+    //   res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+    // });
 // }
 
 const port = process.env.PORT || 5000;
